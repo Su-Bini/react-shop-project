@@ -6,5 +6,9 @@ interface toggleThemeProps {
 }
 
 export default function ProductPage({ toggleTheme }: toggleThemeProps) {
-  return <></>;
+  return (
+    <div className={toggleTheme ? styles.lightTheme : styles.darkTheme}>
+      {/* 내용 */}
+    </div>
+  );
 }
