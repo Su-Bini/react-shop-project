@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Nav from "./components/Nav";
+import Main from "./components/Main";
+import { useState } from "react";
+import Footer from "./components/Footer";
+import ProductPage from "./components/ProductPage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkTheme, setDarkTheme] = useState(false);
+  const [productPage, setProductPage] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkTheme(!darkTheme);
+  };
+
+  const togglePage = () => {
+    setProductPage(!productPage);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={darkTheme ? "white-theme" : "dark-theme"}>
+      <Nav toggleTheme={darkTheme} onToggleTheme={toggleTheme} />
+      {/* <div className="mainContainer">
+        <Main toggleTheme={darkTheme} />
+      </div> */}
+      <div className="mainContainer">
+        {productPage ? (
+          <ProductPage toggleTheme={darkTheme} />
+        ) : (
+          <Main toggleTheme={darkTheme} onPageChange={togglePage} />
+        )}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Footer toggleTheme={darkTheme} />
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,15 @@
+.footerContainer{
+  /* background-color: #1d252b; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.cardIcon{
+  padding: 5px;
+}
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,36 @@
+
+.ItemCardMainContainer{
+  /* position : relative; */
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  margin-left:50px;
+  margin-right:50px;
+
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.ItemCardMainContainer:first-child {
+  margin-top: 90px;
+}
+
+.ItemCardMainContainer:not(:first-child) {
+  margin-top: 0;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom:30px;
+
+}
+
+.sort{
+  display:flex;
+  justify-content: center;
+  width:100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
